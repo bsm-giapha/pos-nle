@@ -1,0 +1,13 @@
+.BrightDivider {
+    @apply w-full;
+    height: 1px;
+
+    &--on-light {
+        @apply bg-grey-100;
+    }
+
+    &--on-dark {
+        @apply bg-white;
+        opacity: 0.15;
+    }
+}

@@ -1,0 +1,44 @@
+.BrightButtonIcon {
+    vertical-align:middle;
+    &__size {
+        &--large {
+            @apply __buttons--icon--size--large;
+            line-height: 1;
+            &--rounded {
+                @apply __buttons--icon--size--large--rounded;
+            }
+            &--prefix {
+                @apply __buttons--icon--size--large--prefix;
+            }
+            &--postfix {
+                @apply __buttons--icon--size--large--postfix;
+            }
+        }
+        &--medium {
+            @apply __buttons--icon--size--medium;
+            line-height: 0.96;
+            &--rounded {
+                @apply __buttons--icon--size--medium--rounded;
+            }
+            &--prefix {
+                @apply __buttons--icon--size--medium--prefix;
+            }
+            &--postfix {
+                @apply __buttons--icon--size--medium--postfix;
+            }
+        }
+        &--small {
+            @apply __buttons--icon--size--small;
+            line-height: 0.99;
+            &--rounded {
+                @apply __buttons--icon--size--small--rounded;
+            }
+            &--prefix {
+                @apply __buttons--icon--size--small--prefix;
+            }
+            &--postfix {
+                @apply __buttons--icon--size--small--postfix;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.NavigationSidebarGroup {
+    @apply list-none select-none;
+    &__Label {
+        @apply font-primary uppercase font-medium mt-16 mb-8 text-white text-opacity-60;
+        font-size: 13px;
+        line-height: 20px;
+        letter-spacing: 0.03em;
+    }
+}

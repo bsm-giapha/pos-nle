@@ -1,0 +1,124 @@
+.BrightStepBar {
+    &__StepLabel {
+        @apply __typography--section-caps--xs text-grey-500 mb-4;
+    }
+
+    &__Header {
+        @apply __typography--heading--3 text-grey-900 mb-0;
+    }
+
+    &__SubHeader {
+        @apply __typography--body--s text-grey-600 mt-8 mb-0;
+    }
+
+    &__StepList {
+        @apply inline-block;
+        vertical-align: top;
+        @apply tablet:flex;
+    }
+
+    &__Step {
+        @apply __typography--section--s--bold text-left cursor-pointer select-none truncate;
+        margin-top: 28px;
+        margin-bottom: 28px;
+        transition: color 1s ease;
+
+        @apply tablet:flex-1 tablet:text-center tablet:my-0 tablet:break-normal;
+        @screen tablet {
+            white-space: initial;
+            overflow: initial;
+            text-overflow: initial;
+        }
+
+        &:first-child {
+            @apply mt-12 tablet:mt-0;
+        }
+        &:last-child {
+            @apply mb-12 tablet:mb-0;
+        }
+
+        &--primary {
+            &.BrightStepBar__Step--active {
+                @apply text-indigo-200;
+                &:hover {
+                    @apply text-indigo-400;
+                }
+            }
+            &.BrightStepBar__Step--current {
+                @apply text-indigo-400;
+            }
+        }
+
+        &--secondary{
+            &.BrightStepBar__Step--active {
+                @apply text-pink-200;
+                &:hover {
+                    @apply text-pink-400;
+                }
+            }
+            &.BrightStepBar__Step--current {
+                @apply text-pink-400;
+            }
+        }
+        &--inactive {
+            @apply text-grey-200;
+        }
+    }
+
+    &__Bar {
+        @apply relative w-4 bg-grey-200 ml-16;
+        @apply tablet:w-full tablet:w-auto tablet:h-4 tablet:mb-24 tablet:ml-0;
+        &__Progress {
+            @apply absolute w-4 tablet:h-4 tablet:w-auto;
+            transition: width 1s ease, height 1s ease;
+
+            &--primary {
+                @apply bg-indigo-300;
+            }
+
+            &--secondary {
+                @apply bg-pink-300;
+            }
+
+            &__Bubble {
+                @apply __typography--body--s absolute text-white text-center w-32 h-32 rounded-full cursor-pointer select-none mb-0;
+                font-size: 16px;
+                transition: color 1s ease, background-color 1s ease, width 0.25s ease, height 0.25s ease, left 0.25s ease, line-height 0.25s ease;
+
+                transform: translateX(calc(-50% + 2px));
+
+                @screen tablet {
+                    transform: translateY(calc(-50% + 2px));
+                }
+
+                &--primary {
+                    &.BrightStepBar__Bar__Progress__Bubble--active {
+                        @apply bg-indigo-300;
+                        &:hover {
+                            @apply bg-indigo-400;
+                        }
+                    }
+                    &.BrightStepBar__Bar__Progress__Bubble--current {
+                        @apply bg-indigo-400;
+                    }
+                }
+
+                &--secondary {
+                    &.BrightStepBar__Bar__Progress__Bubble--active {
+                        @apply bg-pink-300;
+                        &:hover {
+                            @apply bg-pink-400;
+                        }
+                    }
+                    &.BrightStepBar__Bar__Progress__Bubble--current {
+                        @apply bg-pink-400;
+                    }
+                }
+
+                &--inactive {
+                    @apply bg-grey-200;
+                }
+            }
+        }
+    }
+}

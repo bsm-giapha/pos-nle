@@ -1,0 +1,16 @@
+.BrightTagIcon {
+    @apply mb-0;
+    vertical-align: middle;
+    line-height: 1;
+    &__size {
+        &--large {
+            font-size: 23px;
+        }
+        &--medium {
+            font-size: 21px;
+        }
+        &--small {
+            font-size: 19px;
+        }
+    }
+}

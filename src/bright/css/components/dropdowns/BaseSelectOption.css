@@ -1,0 +1,106 @@
+/* TODO: In future version, add variants (i.e. standard, alternative, danger) */
+.BaseSelectOption {
+    @apply px-20 py-6 cursor-pointer transition-smooth select-none flex;
+
+    &__state {
+        &--focused,
+        &--enabled:hover:not(&--selected) {
+            @apply bg-aqua-25;
+        }
+        &--selected {
+            @apply bg-aqua-50;
+        }
+        &--disabled {
+            @apply cursor-not-allowed;
+        }
+    }
+
+    &__Icon {
+        @apply -ml-4 mr-8;
+
+        &__size {
+            &--large {
+                @apply text-l;
+            }
+            &--medium {
+                @apply text-m;
+            }
+            &--small {
+                @apply text-s;
+            }
+        }
+
+        &__state {
+            &--enabled {
+                @apply text-blue-600;
+            }
+            &--disabled {
+                @apply text-grey-200;
+                &:hover {
+                    @apply cursor-not-allowed;
+                }
+            }
+        }
+    }
+    &__LabelContainer {
+        @apply inline-block;
+
+        &__PrimaryLabel {
+            &__size {
+                &--large {
+                    @apply font-secondary font-regular text-l leading-none tracking-body;
+                }
+                &--medium {
+                    @apply font-secondary font-regular text-m leading-none tracking-body;
+                }
+                &--small {
+                    @apply font-secondary font-regular text-s leading-none tracking-body;
+                }
+            }
+
+            &__state {
+                &--enabled {
+                    @apply text-grey-700;
+                }
+                &--disabled {
+                    @apply text-grey-200;
+                }
+                &--focused {
+                    @apply text-blue-500;
+                }
+                &--selected {
+                    @apply text-blue-700;
+                }
+            }
+        }
+
+        &__SecondaryLabel {
+            &__size {
+                &--large {
+                    @apply __typography--body--s mt-2 mb-0 font-light;
+                }
+                &--medium {
+                    @apply __typography--body--xs mt-2 mb-0 font-light;
+                }
+                &--small {
+                    @apply font-secondary font-regular text-xxs leading-none tracking-body mt-4 mb-0;
+                }
+            }
+
+            &__state {
+                &--enabled {
+                    @apply text-grey-700;
+                }
+                &--disabled {
+                    @apply text-grey-100;
+                }
+                &--focused {
+                    @apply text-grey-800;
+                }
+                &--selected {
+                    @apply text-grey-900;
+                }
+            }
+        }
+    }
+}

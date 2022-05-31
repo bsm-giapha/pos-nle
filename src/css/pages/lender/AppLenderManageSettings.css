@@ -1,0 +1,25 @@
+.AppLenderManageSettings {
+    .SettingCard {
+        transition: opacity .5s;
+
+        &--Enabled {
+            &:hover {
+                opacity: 0.667;
+            }
+        }
+
+        &--Disabled {
+            @apply cursor-not-allowed;
+            opacity: 0.5;
+        }
+    }
+
+    .SettingIcon {
+        @apply -my-4 -ml-4 text-orange-500;
+        font-size: 64px;
+    }
+
+    .SettingGroup {
+        @apply mb-32;
+    }
+}

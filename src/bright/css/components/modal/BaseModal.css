@@ -1,0 +1,36 @@
+.BaseModal {
+    @apply max-h-screen cursor-auto;
+
+    &Overlay {
+        @apply fixed w-full h-full cursor-pointer;
+        z-index: 9998;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        transition: transform 1s;
+
+        &__active {
+            @apply visible;
+            z-index: 9998;
+        }
+    }
+
+    &Footer {
+        @apply pt-16;
+    }
+
+    &__width {
+        &--large {
+            width: 560px;
+            max-width: 560px;
+        }
+        &--medium {
+            width: 440px;
+            max-width: 440px;
+        }
+        &--small {
+            width: 320px;
+            max-width: 320px;
+        }
+    }
+}

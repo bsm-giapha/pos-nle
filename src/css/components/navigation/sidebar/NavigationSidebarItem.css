@@ -1,0 +1,41 @@
+.NavigationSidebarItem {
+    @apply block rounded-6 select-none;
+    :hover {
+        @apply cursor-pointer bg-black bg-opacity-20;
+        * {
+            @apply bg-transparent;
+        }
+    }
+
+    &--current {
+        @apply bg-black bg-opacity-20;
+    }
+
+    &--disabled {
+        @apply cursor-not-allowed;
+        :hover {
+            @apply cursor-not-allowed bg-transparent;
+        }
+    }
+
+    &__Anchor {
+        @apply block p-8 rounded-6;
+        &--disabled {
+            @apply cursor-not-allowed;
+        }
+    }
+
+    &__Icon {
+        @apply text-white text-opacity-80;
+        font-size: 24px;
+        &--disabled {
+            @apply cursor-not-allowed text-opacity-40;
+        }
+    }
+    &__Label {
+        @apply __typography--body--s text-white text-opacity-80 ml-12;
+        &--disabled {
+            @apply cursor-not-allowed text-opacity-40;
+        }
+    }
+}

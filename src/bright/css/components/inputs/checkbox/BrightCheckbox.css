@@ -1,0 +1,334 @@
+.BrightCheckbox {
+    &__container {
+        .BaseLabelContainer {
+            @apply inline-block mb-0;
+            &__size {
+                &--large {
+                    @apply mt-3;
+
+                    &--withSubLabel {
+                        @apply mt-3;
+                    }
+                }
+                &--medium {
+                    @apply mt-5;
+
+                    &--withSubLabel {
+                        @apply mt-5;
+                    }
+                }
+                &--small {
+                    @apply mt-5;
+
+                    &--withSubLabel {
+                        @apply mt-5;
+                    }
+                }
+            }
+        }
+
+        /* Container: Checkbox sizing */
+        &--size {
+            &--large {
+                &.BrightCheckbox__container--parentIsInputGroup {
+                    @apply mb-12 !important;
+                }
+                div.flex.flex-row div.inline-block:first-child {
+                    @apply ml-3 mr-10;
+                }
+            }
+
+            &--medium {
+                &.BrightCheckbox__container--parentIsInputGroup {
+                    @apply mb-8 !important;
+                }
+                div.flex.flex-row div.inline-block:first-child {
+                    @apply ml-1 mr-6;
+                }
+            }
+
+            &--small {
+                &.BrightCheckbox__container--parentIsInputGroup {
+                    @apply mb-4 !important;
+                }
+                div.flex.flex-row div.inline-block:first-child {
+                    @apply mr-1;
+                }
+            }
+        }
+
+        /* Container: General checkbox properties */
+        input ~ span {
+            @apply border-solid border-2 rounded-3;
+
+            box-sizing: border-box;
+        }
+
+        /* Container: Hover|Active|Focus|Disabled when the checkbox is unchecked */
+        &:hover input:not(:checked) ~ span {
+            @apply border-grey-700 bg-grey-50;
+
+            box-shadow: 0 0 0 9px rgba(247,247,247,0.95);
+        }
+        &:active input:not(:checked) ~ span,
+        &:focus input:not(:checked) ~ span {
+            @apply border-grey-900 bg-grey-100;
+
+            box-shadow: 0 0 0 9px rgba(229,229,229,0.95) !important;
+        }
+
+        /* Container: Hover|Active|Focus|Disabled when the checkbox is checked */
+        /* Container: Apply variants */
+        &--variant {
+            &--standard {
+                &:hover input:checked ~ span {
+                    @apply border-blue-400 bg-blue-400;
+
+                    box-shadow: 0 0 0 9px rgba(247,253,255,0.95);
+                }
+                &:active input:checked ~ span,
+                &:focus input:checked ~ span {
+                    @apply bg-blue-600 border-blue-600;
+
+                    box-shadow: 0 0 0 9px rgba(224,246,255,0.95);
+                }
+            }
+            &--alternative {
+                &:hover input:checked ~ span {
+                    @apply bg-grey-700 border-grey-700;
+
+                    box-shadow: 0 0 0 9px rgba(247,247,247,0.95);
+                }
+                &:active input:checked ~ span,
+                &:focus input:checked ~ span {
+                    @apply bg-grey-900 border-grey-900;
+
+                    box-shadow: 0 0 0 9px rgba(229,229,229,0.95);
+                }
+            }
+            &--danger {
+                &:hover input:not(:checked) ~ span {
+                    @apply bg-red-50 border-red-400;
+
+                    box-shadow: 0 0 0 9px rgba(254,245,245,0.95);
+                }
+                &:active input:not(:checked) ~ span,
+                &:focus input:not(:checked) ~ span {
+                    @apply bg-red-100 border-red-600;
+
+                    box-shadow: 0 0 0 9px rgba(252,216,216,0.95) !important;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        @apply inline relative cursor-pointer;
+
+        font-size: 1.25rem;
+        padding-left: 35px;
+        left: 4.5px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        /* Wrapper: Hide default checkbox */
+        input {
+            @apply absolute opacity-0 h-0 w-0;
+        }
+
+        /* Wrapper: Custom checkbox */
+        span {
+            @apply absolute top-0 left-0 border-solid border-2 border-grey-800 rounded-3 transition-smooth;
+
+            box-sizing: border-box;
+        }
+
+        /* Wrapper: Hide checkmark when unchecked */
+        span:after {
+            @apply absolute hidden;
+
+            content: "";
+        }
+
+        /* Wrapper: Show the checkmark when checked */
+        input:checked ~ span:after {
+            display: block;
+        }
+
+        /* Wrapper: Style checkmark */
+        span:after {
+            @apply border-solid border-white border-t-0 border-l-0;
+
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        /* Wrapper: Checkbox sizing */
+        &--size {
+            &--large {
+                font-size: 1.4rem;
+                span {
+                    @apply mt-0 w-24 h-24;
+                }
+
+                span:after {
+                    @apply top-0 w-10 h-18;
+
+                    left: 5px;
+                    border-right-width: 5px;
+                    border-bottom-width: 5px;
+                }
+            }
+
+            &--medium {
+                font-size: 1.25rem;
+                span {
+                    @apply mt-2 w-20 h-20;
+                }
+
+                span:after {
+                    @apply w-8;
+
+                    height: 15px;
+                    top: -1px;
+                    left: 4px;
+                    border-right-width: 4px;
+                    border-bottom-width: 4px;
+                }
+            }
+
+            &--small {
+                font-size: 1rem;
+                span {
+                    @apply mt-4 w-16 h-16;
+                }
+
+                span:after {
+                    @apply w-6 h-12;
+
+                    top: -1px;
+                    left: 3px;
+                    border-right-width: 3px;
+                    border-bottom-width: 3px;
+                }
+            }
+        }
+
+        /* Wrapper: General checkbox properties */
+        input:disabled ~ span {
+            @apply cursor-not-allowed;
+        }
+
+        /* Wrapper: Hover|Active|Focus|Disabled when the checkbox is unchecked */
+        input:not(:checked) ~ span:hover {
+            @apply bg-grey-50 border-solid border-2 border-grey-700 rounded-3;
+
+            box-sizing: border-box;
+            box-shadow: 0 0 0 9px rgba(247,247,247,0.95);
+        }
+        input:not(:checked) ~ span:active,
+        input:not(:checked) ~ span:focus {
+            @apply bg-grey-100 border-solid border-2 border-grey-900 rounded-3;
+
+            box-sizing: border-box;
+            box-shadow: 0 0 0 9px rgba(229,229,229,0.95) !important;
+        }
+        input:not(:checked):disabled ~ span,
+        input:not(:checked):disabled ~ span:hover {
+            @apply bg-white border-solid border-2 border-grey-200 rounded-3;
+
+            box-sizing: border-box;
+            box-shadow: 0 0 0 0 #fff !important;
+        }
+
+        /* Wrapper: Hover|Active|Focus|Disabled when the checkbox is checked */
+        input:checked ~ span {
+            @apply border-solid border-2 rounded-3;
+
+            box-sizing: border-box;
+        }
+        input:checked ~ span:hover {
+            @apply border-solid border-2 rounded-3;
+
+            box-sizing: border-box;
+        }
+        input:checked ~ span:active,
+        input:checked ~ span:focus {
+            @apply border-solid border-2 rounded-3;
+
+            box-sizing: border-box;
+        }
+        input:checked:disabled ~ span,
+        input:checked:disabled ~ span:hover,
+        input:checked:disabled ~ span:active,
+        input:checked:disabled ~ span:focus {
+            @apply border-solid border-2 rounded-3 cursor-not-allowed shadow-none;
+
+            box-sizing: border-box;
+        }
+
+        /* Wrapper: Apply variants */
+        &--variant {
+            &--standard {
+                input:checked ~ span {
+                    @apply bg-blue-500 border-blue-500;
+                }
+                input:checked ~ span:hover {
+                    @apply bg-blue-400 border-blue-400;
+
+                    box-shadow: 0 0 0 9px rgba(247,253,255,0.95);
+                }
+                input:checked ~ span:active,
+                input:checked ~ span:focus {
+                    @apply bg-blue-600 border-blue-600;
+
+                    box-shadow: 0 0 0 9px rgba(224,246,255,0.95);
+                }
+                input:checked:disabled ~ span,
+                input:checked:disabled ~ span:hover {
+                    @apply bg-blue-200 border-blue-200;
+                }
+            }
+            &--alternative {
+                input:checked ~ span {
+                    @apply bg-grey-800 border-grey-800;
+                }
+                input:checked ~ span:hover {
+                    @apply bg-grey-700 border-grey-700;
+
+                    box-shadow: 0 0 0 9px rgba(247,247,247,0.95);
+                }
+                input:checked ~ span:active,
+                input:checked ~ span:focus {
+                    @apply bg-grey-900 border-grey-900;
+
+                    box-shadow: 0 0 0 9px rgba(229,229,229,0.95);
+                }
+                input:checked:disabled ~ span,
+                input:checked:disabled ~ span:hover {
+                    @apply bg-grey-200 border-grey-200;
+                }
+            }
+            &--danger {
+                input:not(:checked) ~ span {
+                    @apply bg-red-50 border-red-500;
+                }
+                input:not(:checked )~ span:hover {
+                    @apply bg-red-50 border-red-400;
+
+                    box-shadow: 0 0 0 9px rgba(254,245,245,0.95);
+                }
+                input:not(:checked) ~ span:active,
+                input:not(:checked) ~ span:focus {
+                    @apply bg-red-100 border-red-600;
+
+                    box-sizing: border-box;
+                    box-shadow: 0 0 0 9px rgba(252,216,216,0.95) !important;
+                }
+            }
+        }
+    }
+}

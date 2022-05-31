@@ -1,0 +1,50 @@
+body {
+    @apply __typography--body--m;
+}
+
+h1 {
+    @apply __typography--heading--1;
+}
+
+h2 {
+    @apply __typography--heading--2;
+}
+
+h3 {
+    @apply __typography--heading--3;
+}
+
+h4 {
+    @apply __typography--heading--4;
+}
+
+h5 {
+    @apply __typography--heading--5;
+}
+
+h6 {
+    @apply __typography--heading--6;
+}
+
+p {
+    @apply mb-16;
+}
+
+ul {
+    @apply list-disc mb-16;
+    > li > ul {
+        @apply mb-2;
+    }
+}
+
+ol {
+    @apply list-decimal mb-16;
+}
+
+a {
+    @apply text-blue-500;
+}
+
+hr {
+    @apply border-grey-100;
+}

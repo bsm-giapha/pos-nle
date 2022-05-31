@@ -1,0 +1,7 @@
+.BrightTooltip {
+    &__card {
+        &--title {
+            @apply font-bold;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+.BrightAvatar {
+    @apply overflow-hidden rounded-full;
+    > img {
+        @apply h-full w-full;
+        object-fit: cover;
+    }
+
+    &__disabled {
+        @apply opacity-40 cursor-not-allowed;
+    }
+
+    &__light {
+        @apply border;
+    }
+
+    &__size {
+        &--small {
+            @apply w-24 h-24;
+            > div {
+                @apply __typography--section-caps--xs mb-0;
+                line-height: 24px;
+            }
+            &.BrightAvatar__light > div {
+                line-height: 22px;
+            }
+        }
+        &--medium {
+            @apply w-32 h-32;
+            > div {
+                @apply __typography--section-caps--s mb-0;
+                line-height: 32px;
+            }
+            &.BrightAvatar__light > div {
+                line-height: 30px;
+            }
+        }
+        &--large {
+            @apply w-48 h-48;
+            > div {
+                @apply __typography--section-caps--l mb-0;
+                line-height: 48px;
+            }
+            &.BrightAvatar__light > div {
+                line-height: 46px;
+            }
+        }
+        &--extra-large {
+            @apply w-64 h-64;
+            > div {
+                @apply __typography--section-caps--xl mb-0;
+                line-height: 64px;
+            }
+            &.BrightAvatar__light > div {
+                line-height: 62px;
+            }
+        }
+        &--extra-extra-large {
+            width: 128px;
+            height: 128px;
+            > div {
+                @apply __typography--heading--2 mb-0;
+                line-height: 128px;
+            }
+            &.BrightAvatar__light > div {
+                line-height: 126px;
+            }
+        }
+    }
+
+    &__color {
+        &--blue {
+            @apply bg-blue-500 text-white text-center;
+            &.BrightAvatar__light {
+                @apply bg-blue-50 text-blue-600 border-blue-200;
+            }
+        }
+        &--aqua {
+            @apply bg-aqua-700 text-white text-center;
+            &.BrightAvatar__light {
+                @apply bg-aqua-50 text-aqua-800 border-aqua-400;
+            }
+        }
+        &--pink {
+            @apply bg-pink-500 text-white text-center;
+            &.BrightAvatar__light {
+                @apply bg-pink-50 text-pink-600 border-pink-200;
+            }
+        }
+        &--yellow {
+            @apply bg-yellow-500 text-black text-center;
+            &.BrightAvatar__light {
+                @apply bg-yellow-100 text-yellow-800 border-yellow-400;
+            }
+        }
+        &--green {
+            @apply bg-green-500 text-white text-center;
+            &.BrightAvatar__light {
+                @apply bg-green-50 text-green-600 border-green-200;
+            }
+        }
+        &--red {
+            @apply bg-red-500 text-white text-center;
+            &.BrightAvatar__light {
+                @apply bg-red-50 text-red-600 border-red-200;
+            }
+        }
+        &--orange {
+            @apply bg-orange-600 text-white text-center;
+            &.BrightAvatar__light {
+                @apply bg-orange-50 text-orange-700 border-orange-200;
+            }
+        }
+        &--purple {
+            @apply bg-purple-500 text-white text-center;
+            &.BrightAvatar__light {
+                @apply bg-purple-50 text-purple-600 border-purple-200;
+            }
+        }
+        &--indigo {
+            @apply bg-indigo-500 text-white text-center;
+            &.BrightAvatar__light {
+                @apply bg-indigo-50 text-indigo-600 border-indigo-200;
+            }
+        }
+        &--grey {
+            @apply bg-grey-600 text-white text-center;
+            &.BrightAvatar__light {
+                @apply bg-grey-50 text-grey-700 border-grey-200;
+            }
+        }
+    }
+}

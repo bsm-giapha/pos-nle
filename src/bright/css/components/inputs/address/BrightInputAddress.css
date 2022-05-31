@@ -1,0 +1,36 @@
+.BrightInputAddress {
+
+    legend {
+        > label {
+            @apply font-secondary font-bold;
+            &.BaseLabelPrimary__size {
+                &--large {
+                    @apply text-l;
+                }
+                &--medium {
+                    @apply text-m;
+                }
+                &--small {
+                    @apply text-s;
+                }
+            }
+        }
+    }
+
+    &__country,
+    &__streetAddress1 {
+        @apply tablet:pr-16 !important;
+    }
+
+    &__city {
+        @apply px-0 tablet:pr-8 !important;
+    }
+
+    &__state {
+        @apply pl-0 pr-16 !important;
+    }
+
+    &__zip {
+        @apply px-0 !important;
+    }
+}

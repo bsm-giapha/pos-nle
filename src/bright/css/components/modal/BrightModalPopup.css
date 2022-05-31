@@ -1,0 +1,39 @@
+.BrightModalPopup {
+    @apply absolute overflow-y-auto;
+    max-height: 500px;
+    margin-right: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &__mobile {
+        max-width: 80vw;
+    }
+
+    .BrightCard {
+        &LabelContainer {
+            @apply text-center;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        @apply bg-grey-200 overflow-x-hidden;
+        display: revert;
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @apply bg-grey-300 rounded-4;
+    }
+}
+
+.BaseModal {
+    &Overlay {
+        &__inactive {
+            @apply invisible;
+            z-index: -9998;
+            transition: all 0.55s ease-in-out;
+            -webkit-transition: all 0.55s ease-in-out;
+        }
+    }
+}

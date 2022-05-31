@@ -1,0 +1,362 @@
+.BrightSwitch {
+    &__disabled {
+        *,
+        .BaseLabelContainer *,
+        .BrightSwitch__description {
+            @apply text-grey-100 cursor-not-allowed;
+        }
+    }
+
+    &__container {
+        @apply cursor-pointer;
+
+        /* Container: Switch sizing */
+        &--size {
+            &--large {
+                &.BrightSwitch__container--parentIsInputGroup {
+                    @apply mb-24;
+                }
+            }
+
+            &--medium {
+                &.BrightSwitch__container--parentIsInputGroup {
+                    @apply mb-20;
+                }
+            }
+
+            &--small {
+                &.BrightSwitch__container--parentIsInputGroup {
+                    @apply mb-16;
+                }
+            }
+        }
+
+        /* Container: General switch properties */
+        &:hover input + span:before {
+            @apply bg-grey-50;
+        }
+        &:active input + span:before,
+        &:focus input + span:before {
+            @apply bg-grey-100;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(229, 229, 229, 0.5);
+        }
+
+        /* Container: Hover|Active|Focus|Disabled when the switch is toggled off */
+        &:hover input:not(:checked) + span {
+            @apply bg-grey-200;
+        }
+        &:hover input:not(:checked) + span:before {
+            @apply bg-grey-25;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(247, 247, 247, 0.5);
+        }
+        &:active input:not(:checked) + span,
+        &:focus input:not(:checked) + span {
+            @apply bg-grey-500;
+        }
+        &:active input:not(:checked) + span:before,
+        &:focus input:not(:checked) + span:before {
+            @apply bg-grey-100;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(242, 242, 242, 0.5);
+        }
+
+        /* Container: Hover|Active|Focus|Disabled when the switch is toggled on */
+        &:hover input:checked + span:before {
+            @apply bg-grey-25;
+        }
+
+        /* Container: Apply variants */
+        &--variant {
+            &--standard {
+                &:hover input:checked + span {
+                    @apply bg-blue-400;
+                }
+                &:hover input:checked + span:before {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(247, 253, 255, 0.5);
+                }
+                &:active input:checked + span,
+                &:focus input:checked + span {
+                    @apply bg-blue-600;
+                }
+                &:active input:checked + span:before,
+                &:focus input:checked + span:before {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(247, 253, 255, 0.5);
+                }
+            }
+            &--alternative {
+                &:hover input:checked + span {
+                    @apply bg-grey-700;
+                }
+                &:hover input:checked + span:before {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(247, 247, 247, 0.5);
+                }
+                &:active input:checked + span,
+                &:focus input:checked + span {
+                    @apply bg-grey-900;
+                }
+            }
+            &--danger {
+                &:hover input:not(:checked) + span {
+                    @apply bg-red-400;
+                }
+                &:hover input:not(:checked) + span:before {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(254, 245, 245, 0.5);
+                }
+                &:active input:not(:checked) + span,
+                &:focus input:not(:checked) + span {
+                    @apply bg-red-600;
+                }
+                &:active input:not(:checked) + span:before,
+                &:focus input:not(:checked) + span:before {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(252, 216, 216, 0.5);
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        /* The Wrapper around the Switch Input & Description */
+        @apply flex flex-row inline-block mt-2;
+
+        &--size {
+            &--large {
+                @apply leading-body-m;
+            }
+
+            &--medium {
+                @apply leading-label-m;
+            }
+
+            &--small {
+                line-height: 0.9;
+            }
+        }
+    }
+
+    &__input {
+        /* The Switch Input - the div around the slider */
+        @apply inline-block relative;
+
+        border-radius: 34px;
+
+        /* Hide default checkbox */
+        input {
+            @apply opacity-0 h-0 w-0;
+        }
+
+        /* The slider (span) */
+        span {
+            @apply absolute top-0 left-0 right-0 bottom-0;
+            outline: 0;
+            border-radius: 32px;
+            background-color: #ccc;
+        }
+
+        span:before {
+            @apply absolute bg-grey-50 transition-smooth;
+
+            content: "";
+            border-radius: 50%;
+        }
+
+        /* Switch Input: Sizing */
+        &--size {
+            &--large {
+                @apply w-40 h-24;
+
+                span:before {
+                    @apply w-20 h-20;
+                    left: 2px;
+                    bottom: 2px;
+                }
+
+                input:checked + span:before {
+                   left: -8px;
+                }
+            }
+
+            &--medium {
+                @apply h-20;
+
+                width: 34px;
+
+                span:before {
+                    @apply w-16 h-16;
+
+                    left: 2px;
+                    bottom: 2px;
+                }
+
+                input:checked + span:before {
+                    left: -10px;
+                }
+            }
+
+            &--small {
+                @apply h-16;
+                width: 1.75rem;
+
+                span:before {
+                    @apply w-12 h-12;
+
+                    left: 2px;
+                    bottom: 2px;
+                }
+
+                input:checked + span:before {
+                    left: -12px;
+                }
+            }
+        }
+
+        /* Switch Input: General properties */
+        input + span:before {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Switch Input: Hover|Active|Focus|Disabled when the switch is toggled off */
+        input:not(:checked) + span {
+            @apply bg-grey-400;
+        }
+        input:not(:checked) + span:before {
+            @apply bg-grey-50;
+        }
+        input:not(:checked) + span:hover {
+            @apply bg-grey-200;
+        }
+        input:not(:checked) + span:hover:before {
+            @apply bg-grey-25;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(247, 247, 247, 0.5);
+        }
+        input:not(:checked) + span:active,
+        input:not(:checked) + span:focus {
+            @apply bg-grey-500;
+        }
+        input:not(:checked) + span:active:before,
+        input:not(:checked) + span:focus:before {
+            @apply bg-grey-100;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(242, 242, 242, 0.5);
+        }
+        input:not(:checked):disabled + span,
+        input:not(:checked):disabled + span:hover {
+            @apply bg-grey-200;
+        }
+        input:not(:checked):disabled + span:before {
+            @apply bg-grey-25 shadow-none;
+        }
+
+        /* Switch Input: Hover|Active|Focus|Disabled when the switch is toggled on */
+        input:checked + span:before {
+            @apply bg-grey-50;
+
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Switch Input: Apply variants */
+        &--variant {
+            &--standard {
+                input:checked + span {
+                    @apply bg-blue-500;
+                }
+                input:checked + span:hover {
+                    @apply bg-blue-400;
+                }
+                input:checked + span:hover:before {
+                    @apply bg-grey-25;
+
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(247, 253, 255, 0.5);
+                }
+                input:checked + span:active,
+                input:checked + span:focus {
+                    @apply bg-blue-600;
+                }
+                input:checked + span:active:before,
+                input:checked + span:focus:before {
+                    @apply bg-grey-100;
+
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(224, 246, 255, 0.5);
+                }
+                input:checked:disabled + span,
+                input:checked:disabled + span:hover {
+                    @apply bg-blue-200;
+                }
+                input:checked:disabled + span:before {
+                    @apply bg-grey-25 shadow-none;
+                }
+            }
+            &--alternative {
+                input:checked + span {
+                    @apply bg-grey-800;
+                }
+                input:checked + span:hover {
+                    @apply bg-grey-700;
+                }
+                input:checked + span:hover:before {
+                    @apply bg-grey-25;
+
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(247, 247, 247, 0.5);
+                }
+                input:checked + span:active,
+                input:checked + span:focus {
+                    @apply bg-grey-900;
+                }
+                input:checked + span:active:before,
+                input:checked + span:focus:before {
+                    @apply bg-grey-100;
+
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(229, 229, 229, 0.5);
+                }
+                input:checked:disabled + span,
+                input:checked:disabled + span:hover {
+                    @apply bg-grey-200;
+                }
+                input:checked:disabled + span:before {
+                    @apply bg-grey-25 shadow-none;
+                }
+            }
+            &--danger {
+                input:not(:checked) + span {
+                    @apply bg-red-500;
+                }
+                input:not(:checked) + span:hover {
+                    @apply bg-red-400;
+                }
+                input:not(:checked) + span:hover:before {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(254, 245, 245, 0.5);
+                }
+                input:not(:checked) + span:active,
+                input:not(:checked) + span:focus {
+                    @apply bg-red-600;
+                }
+                input:not(:checked) + span:active:before,
+                input:not(:checked) + span:focus:before {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(252, 216, 216, 0.5);
+                }
+            }
+        }
+    }
+
+    &__description {
+        @apply ml-8;
+
+        &--size {
+            &--large {
+                @apply __typography--body--m;
+            }
+
+            &--medium {
+                @apply __typography--body--s;
+            }
+
+            &--small {
+                @apply __typography--body--xs;
+            }
+        }
+    }
+ }

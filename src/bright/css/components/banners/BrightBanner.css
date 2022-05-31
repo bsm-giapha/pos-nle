@@ -1,0 +1,166 @@
+.BrightBanner {
+    @apply py-20 px-24;
+
+    /* Base Styling */
+    .BrightCardMain {
+        .BrightCardHeader {
+            .BrightCardLabelContainer {
+                @apply mb-4;
+                .BrightCardLabel {
+                    @apply __typography--section--m--bold mb-0;
+                }
+            }
+            .BrightCardHeaderCenter {
+                > div:last-of-type {
+                    @apply __typography--body--s--bold font-semibold mb-0;
+                }
+            }
+        }
+    }
+
+    &__type {
+        &--info {
+            /* Normal Non-Announcement Styling */
+            @apply bg-indigo-50 border-indigo-100;
+            .BrightCardHeaderCenter {
+                .BrightCardLabel {
+                    @apply text-indigo-500;
+                }
+                > div:last-of-type {
+                    @apply text-indigo-600 text-opacity-80;
+                }
+            }
+            .BrightBannerIcon, .BrightBannerRemove {
+                @apply text-indigo-400;
+            }
+
+            /* Announcement Styling */
+            &.BrightBanner__announcement {
+                @apply bg-indigo-500;
+
+                .BrightCardHeaderCenter {
+                    .BrightCardLabel {
+                        @apply text-white;
+                    }
+                    > div:last-of-type {
+                        @apply text-white text-opacity-90;
+                    }
+                }
+                .BrightBannerIcon, .BrightBannerRemove {
+                    @apply text-white;
+                }
+            }
+        }
+
+        &--error {
+            /* Normal Non-Announcement Styling */
+            @apply bg-red-50 border-red-100;
+            .BrightCardHeaderCenter {
+                .BrightCardLabel {
+                    @apply text-red-600;
+                }
+                > div:last-of-type {
+                    @apply text-red-700 text-opacity-80;
+                }
+            }
+            .BrightBannerIcon, .BrightBannerRemove {
+                @apply text-red-400;
+            }
+
+            /* Announcement Styling */
+            &.BrightBanner__announcement {
+                @apply bg-red-600;
+
+                .BrightCardHeaderCenter {
+                    .BrightCardLabel {
+                        @apply text-white;
+                    }
+                    > div:last-of-type {
+                        @apply text-white text-opacity-90;
+                    }
+                }
+                .BrightBannerIcon, .BrightBannerRemove {
+                    @apply text-white;
+                }
+            }
+        }
+
+        &--warning {
+            /* Normal Non-Announcement Styling */
+            @apply bg-yellow-100 border-yellow-400;
+            .BrightCardHeaderCenter {
+                .BrightCardLabel {
+                    @apply text-yellow-800;
+                }
+                > div:last-of-type {
+                    @apply text-yellow-900 text-opacity-80;
+                }
+            }
+            .BrightBannerIcon, .BrightBannerRemove {
+                @apply text-yellow-700;
+            }
+
+            /* Announcement Styling */
+            &.BrightBanner__announcement {
+                @apply bg-yellow-400;
+                .BrightCardHeaderCenter {
+                    .BrightCardLabel {
+                        @apply text-black;
+                    }
+                    > div:last-of-type {
+                        @apply text-black text-opacity-60;
+                    }
+                }
+                .BrightBannerIcon, .BrightBannerRemove {
+                    @apply text-black;
+                }
+            }
+        }
+
+        &--success {
+            /* Normal Non-Announcement Styling */
+            @apply bg-green-50 border-green-200;
+            .BrightCardHeaderCenter {
+                .BrightCardLabel {
+                    @apply text-green-600;
+                }
+                > div:last-of-type {
+                    @apply text-green-700 text-opacity-90;
+                }
+            }
+            .BrightBannerIcon, .BrightBannerRemove {
+                @apply text-green-500;
+            }
+
+            /* Announcement Styling */
+            &.BrightBanner__announcement {
+                @apply bg-green-600;
+                .BrightCardHeaderCenter {
+                    .BrightCardLabel {
+                        @apply text-white;
+                    }
+                    > div:last-of-type {
+                        @apply text-white text-opacity-90;
+                    }
+                }
+                .BrightBannerIcon, .BrightBannerRemove {
+                    @apply text-white;
+                }
+            }
+        }
+    }
+
+    .BrightBannerIcon {
+        font-size: 2.25rem;
+    }
+    .BrightBannerRemove {
+        font-size: 1.5rem;
+    }
+
+    /* Hide the Icon on mobile */
+    @media screen and (max-width: theme('screens.tablet')) {
+        .BrightCardHeaderLeft {
+            @apply hidden;
+        }
+    }
+}

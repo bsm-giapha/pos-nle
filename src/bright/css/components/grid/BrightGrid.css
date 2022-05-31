@@ -1,0 +1,20 @@
+.BrightGrid {
+    &__gutters-vertical {
+        &--small {
+            @apply py-8;
+        }
+        &--medium {
+            @apply py-16;
+        }
+        &--large {
+            @apply py-24;
+        }
+        &--none {
+            @apply py-0;
+        }
+    }
+
+    .BrightRow:first-child {
+        @apply mt-0;
+    }
+}

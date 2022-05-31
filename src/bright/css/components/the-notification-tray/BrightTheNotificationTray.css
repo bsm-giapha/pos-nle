@@ -1,0 +1,148 @@
+.BrightNotificationTray {
+    @apply fixed bottom-0 right-0 float-right m-12 p-8 border-none rounded-6;
+    z-index: 9999;
+
+    &__mobile {
+        @apply left-0 top-0 bottom-auto float-none m-0 p-0 rounded-none;
+    }
+
+    &__hidden {
+        @apply invisible;
+    }
+    &__active {
+        @apply visible;
+    }
+
+    .BrightNotification {
+        @apply max-h-screen overflow-auto border-transparent p-16;
+        max-height: calc(100vh - 32px);
+        width: 360px;
+
+        &__mobile {
+            @apply rounded-none w-full;
+            max-height: 40vh;
+        }
+
+        &__type {
+            &--info {
+                @apply text-indigo-400;
+
+                .BrightCard {
+                    &Label {
+                        @apply text-indigo-400;
+                    }
+                    &SubLabel {
+                        @apply __typography--label--s font-secondary mt-8 mb-0;
+                    }
+                }
+
+                .BrightNotification__cta {
+                    @apply text-indigo-500;
+                }
+
+                .BrightNotification__close {
+                    @apply text-indigo-400;
+                }
+                .BrightNotification__close:hover {
+                    @apply text-indigo-300;
+                }
+            }
+
+            &--success {
+                @apply bg-green-600 text-grey-25;
+
+                .BrightCard {
+                    &Label {
+                        @apply text-grey-25;
+                    }
+                    &SubLabel {
+                        @apply __typography--label--s font-secondary mt-8 mb-0;
+                        line-height: 1.4;
+                        color: rgba(255, 255, 255, 0.8);
+                    }
+                }
+
+                .BrightNotification__cta {
+                    @apply text-grey-50;
+                }
+                .BrightNotification__cta:hover,
+                .BrightNotification__cta:focus {
+                    @apply text-green-600;
+                }
+
+                .BrightNotification__close {
+                    color: rgba(255, 255, 255, 0.75);
+                }
+                .BrightNotification__close:hover {
+                    color: rgba(255, 255, 255, 0.90);
+                }
+            }
+
+            &--error {
+                @apply bg-red-700 text-grey-25;
+
+                .BrightCard {
+                    &Label {
+                        @apply text-grey-25;
+                    }
+                    &SubLabel {
+                        @apply __typography--label--s font-secondary mt-8 mb-0;
+                        color: rgba(255, 255, 255, 0.8);
+                    }
+                }
+
+                .BrightNotification__cta {
+                    @apply text-grey-50;
+                }
+                .BrightNotification__cta:hover,
+                 .BrightNotification__cta:focus {
+                     @apply text-red-600;
+                 }
+
+                .BrightNotification__close {
+                    color: rgba(255, 255, 255, 0.75);
+                }
+                .BrightNotification__close:hover {
+                    color: rgba(255, 255, 255, 0.90);
+                }
+            }
+        }
+
+        &__icon {
+            @apply text-h4;
+            cursor: default;
+        }
+
+        &__cta {
+            @apply mt-4 -ml-16 text-s;
+
+            &--none {
+                @apply hidden;
+            }
+        }
+
+        &__close {
+            @apply float-right;
+
+            .BrightIcon {
+                @apply text-h4;
+            }
+        }
+
+        .BrightCard {
+            &Label {
+                @apply pt-4 text-s;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            @apply bg-grey-200 overflow-x-hidden;
+            display: revert;
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            @apply bg-grey-300 rounded-4;
+        }
+    }
+}

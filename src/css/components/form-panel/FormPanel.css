@@ -1,0 +1,34 @@
+.FormPanel {
+    @apply block AppPagePadding border-b-4 border-grey-50;
+
+    @screen landscape {
+        @apply flex;
+    }
+
+    &__Left {
+        @apply block w-full;
+        @screen landscape {
+            @apply flex-shrink-0 align-top mr-48 mb-0;
+            width: 200px;
+        }
+        @screen desktop {
+            width: 260px;
+        }
+
+        &__Label {
+            @apply __typography--heading--5 text-indigo-400 mb-4;
+        }
+
+        &__SubLabel {
+            @apply __typography--label--xs font-secondary text-grey-600 mb-0;
+            line-height: 1.4;
+        }
+    }
+
+    &__Right {
+        @apply block w-full;
+        @screen landscape {
+            @apply flex-grow;
+        }
+    }
+}

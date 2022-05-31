@@ -1,0 +1,143 @@
+.FormRecentChangesList > .FormRecentChange__Section:first-of-type .BrightDivider {
+    @apply mt-0;
+}
+
+.BaseFormChangeGroup__Label {
+    @apply mb-16 border-b p-2;
+}
+
+.FormRecentChange {
+    @apply flex flex-wrap mb-24;
+
+    @screen tablet {
+        @apply flex-nowrap;
+    }
+
+    &:hover {
+        .FormRecentChange__Actions {
+            @apply opacity-100;
+        }
+    }
+
+    &__animation {
+        &-enter-active, &-leave-active {
+            transition: all .4s ease-in-out;
+        }
+        &-enter, &-leave-to {
+            opacity: 0;
+        }
+        &-move {
+            transition: transform 0.4s;
+        }
+    }
+
+    &__Section {
+        @apply mb-16 __typography--body--m--bold;
+        &--primary {
+            @apply text-indigo-400;
+        }
+        &--secondary {
+            @apply text-grey-700;
+        }
+        &--tertiary {
+            @apply text-grey-500;
+        }
+
+    }
+
+    &__IconBubble {
+        @apply flex-shrink-0 align-top mr-16;
+
+        &:hover, &:focus {
+            .FormRecentChange__IconBubble__Bubble {
+                &--edit {
+                    @apply bg-indigo-25 text-indigo-400;
+                }
+                &--add {
+                    @apply bg-green-25 text-green-400;
+                }
+                &--delete {
+                    @apply bg-red-25 text-red-400;
+                }
+            }
+        }
+
+        &__Bubble {
+            @apply cursor-pointer border rounded-full text-center align-middle transition-smooth;
+            width: 48px;
+            height: 48px;
+
+            &--edit {
+                @apply bg-indigo-50 text-indigo-500 border-indigo-100;
+            }
+            &--add {
+                @apply bg-green-50 text-green-500 border-green-100;
+            }
+            &--delete {
+                @apply bg-red-50 text-red-500 border-red-100;
+            }
+        }
+
+        &__Icon {
+            line-height: 48px;
+            font-size: 24px;
+        }
+    }
+
+    &__Summary {
+        @apply inline-block align-top;
+
+        @screen tablet {
+            @apply mr-16;
+        }
+
+        &__Type {
+            @apply __typography--section-caps--xs--bold mb-4;
+
+            &--edit {
+                @apply text-indigo-400;
+            }
+            &--add {
+                @apply text-green-400;
+            }
+            &--delete {
+                @apply text-red-400;
+            }
+        }
+
+        &__Label {
+            @apply __typography--label--xs--bold mb-4 text-grey-900;
+        }
+
+        &__Diff {
+            @apply __typography--body--s mb-0 text-grey-500;
+        }
+
+        &__Error {
+            @apply __typography--body--s mb-0 text-red-500;
+        }
+    }
+
+    &__Actions {
+        @apply opacity-100 w-full flex-shrink-0 self-center ml-auto mt-4;
+        transition: opacity 0.25s ease;
+
+        @screen tablet {
+            @apply w-auto;
+        }
+
+        @screen desktop {
+            @apply opacity-0;
+        }
+
+        .BrightButton {
+            font-size: 12px;
+            > span {
+                @apply align-middle;
+            }
+            @screen tablet {
+                @apply border border-solid border-grey-800;
+            }
+        }
+    }
+}

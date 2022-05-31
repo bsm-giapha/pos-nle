@@ -1,0 +1,81 @@
+.BrightModalPopout {
+    @apply absolute flex flex-col overflow-y-auto h-full;
+
+    &__from--left {
+        @apply left-0 bottom-0 rounded-l-none rounded-b-none rounded-r-6;
+
+        .BrightCardMedia {
+            @apply rounded-l-none;
+        }
+
+        &--mobile {
+            @apply rounded-l-none;
+            max-width: 80vw;
+            margin-right: 20vw;
+
+            .BrightCardMedia {
+                @apply rounded-l-none;
+            }
+        }
+
+    }
+    &__from--right {
+        @apply right-0 bottom-0 rounded-r-none rounded-b-none rounded-l-6;
+
+        &--mobile {
+            @apply rounded-r-none;
+            max-width: 80vw;
+            margin-left: 20vw;
+        }
+    }
+    &__from--bottom {
+        @apply left-0 right-0 bottom-0 w-full rounded-b-none;
+        border-top-right-radius: 0.375rem;
+        margin-top: 20vh;
+        max-width: none;
+        height: auto;
+        max-height: 80vh;
+    }
+
+    .BrightCard {
+        &Media {
+            @apply flex-none rounded-r-none;
+        }
+        &Main {
+            @apply flex flex-col;
+        }
+        &Header {
+            @apply -mx-20 px-20 pb-16 border-b border-grey-100;
+        }
+        &Label {
+            @apply __typography--heading--4 mb-0;
+        }
+    }
+
+    .BaseModal {
+        &Footer {
+            @apply mt-16 -mx-20 px-20 border-t border-grey-100;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        @apply bg-grey-200 overflow-x-hidden;
+        display: revert;
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @apply bg-grey-300 rounded-4;
+    }
+}
+
+.BaseModal {
+    &Overlay {
+        &__inactive {
+            @apply invisible;
+            z-index: -9998;
+            transition: all 0.8s ease-in-out;
+            -webkit-transition: all 0.8s ease-in-out;
+        }
+    }
+}

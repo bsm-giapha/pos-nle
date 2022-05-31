@@ -1,0 +1,4 @@
+.BrightIcon {
+    @apply cursor-pointer select-none;
+    vertical-align: middle;
+}

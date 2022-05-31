@@ -1,0 +1,26 @@
+.BrightInputValidation {
+    &__size {
+        &--large {
+            @apply __typography--body--m mt-2 mb-0;
+        }
+        &--medium {
+            @apply __typography--body--s mt-2 mb-0;
+        }
+        &--small {
+            @apply __typography--body--xs mt-2 mb-0;
+        }
+    }
+
+    &__type {
+        &--error {
+            @apply text-red-500;
+        }
+        &--success {
+            @apply text-green-500;
+        }
+    }
+
+    .BrightIcon {
+        @apply mb-3;
+    }
+}

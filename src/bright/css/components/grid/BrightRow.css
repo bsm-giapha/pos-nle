@@ -1,0 +1,52 @@
+.BrightRow {
+    @apply inline-block flex flex-wrap;
+
+    &__flex-wrap {
+        @apply flex-wrap;
+     }
+
+    &__align-items {
+        &--stretch {
+            @apply items-stretch;
+        }
+        &--start {
+            @apply items-start;
+        }
+        &--center {
+            @apply items-center;
+        }
+        &--end {
+            @apply items-end;
+        }
+        &--baseline {
+            @apply items-baseline;
+        }
+    }
+
+    &__gutters {
+        &--small {
+            @apply mt-8;
+            &.BrightRow__full-width {
+                @apply -mx-8;
+            }
+        }
+        &--medium {
+            @apply mt-16;
+            &.BrightRow__full-width {
+                @apply -mx-16;
+            }
+        }
+        &--large {
+            @apply mt-24;
+            &.BrightRow__full-width {
+                @apply -mx-24;
+            }
+        }
+        &--none {
+            @apply mt-0;
+            &.BrightRow__full-width {
+                @apply mx-0;
+            }
+        }
+    }
+}

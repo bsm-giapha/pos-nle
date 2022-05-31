@@ -1,0 +1,46 @@
+.BaseFormControl {
+    &__size {
+        &--large {
+            &--loose {
+                margin-bottom: 1.75rem;
+            }
+            &--comfortable {
+                @apply mb-24;
+            }
+            &--tight {
+                @apply mb-20;
+            }
+            &--none {
+                @apply mb-0;
+            }
+        }
+        &--medium {
+            &--loose {
+                @apply mb-24;
+            }
+            &--comfortable {
+                @apply mb-20;
+            }
+            &--tight {
+                @apply mb-16;
+            }
+            &--none {
+                @apply mb-0;
+            }
+        }
+        &--small {
+            &--loose {
+                @apply mb-20;
+            }
+            &--comfortable {
+                @apply mb-16;
+            }
+            &--tight {
+                @apply mb-12;
+            }
+            &--none {
+                @apply mb-0;
+            }
+        }
+    }
+}

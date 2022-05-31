@@ -1,0 +1,106 @@
+.BrightInputList {
+    &__Header {
+        @apply flex mb-4;
+        &__TotalCount {
+            @apply __typography--body--s mb-0 text-grey-700 self-center flex-shrink;
+        }
+        &__Buttons {
+            @apply ml-auto;
+        }
+    }
+
+    &__ShowAllButton {
+        @apply __typography--body--s--bold text-indigo-400 mb-0 normal-case;
+    }
+
+    &__List {
+        @apply list-none mb-12 overflow-visible;
+    }
+
+    &__BulkEditActionsContainer {
+        &__SelectAllButton {
+            @apply inline-block ml-8 mt-12;
+        }
+        &__Button {
+            @apply inline-block mr-8 mt-12;
+        }
+        &__NumberLabel {
+            @apply inline-block uppercase font-semibold font-primary text-s text-blue-500 mt-12;
+        }
+    }
+
+    &__Item {
+        @apply flex px-8 py-12 mb-0 box-content border-b border-grey-100;
+        &:hover, &:focus {
+            @apply bg-indigo-50;
+        }
+        &:last-of-type {
+            @apply mb-0;
+        }
+        &--clickable {
+            @apply cursor-pointer;
+            &:hover, &:focus {
+                .BrightInputList__Item__Labels__Top__Primary {
+                    @apply text-indigo-500;
+                }
+                .BrightInputList__Item__Labels__Bottom__Secondary, .BrightInputList__Item__Labels__Top__Tertiary {
+                    @apply text-indigo-300;
+                }
+            }
+        }
+
+        &__BulkEditCheckboxContainer {
+            @apply flex-shrink-0 self-center mr-0;
+            &__Checkbox {
+                @apply -mb-4;
+            }
+        }
+
+        &__LeftSection {
+            @apply flex-shrink-0 self-center mr-12;
+        }
+        &__Labels {
+            @apply flex-grow self-center;
+            &__Top {
+                @apply flex;
+                &__Primary {
+                    @apply __typography--body--s--bold text-grey-700 truncate mb-0 self-center;
+                }
+                &__Tertiary {
+                    @apply __typography--body--xs text-grey-500 mb-0 truncate flex-shrink self-center ml-auto hidden;
+                    @apply tablet:block;
+                }
+            }
+            &__Bottom {
+                &__Secondary {
+                    @apply __typography--body--xs text-grey-500 mb-0 truncate;
+                }
+            }
+        }
+        &__Actions {
+            @apply ml-12 self-center;
+            .BrightButton__tertiary--standard {
+                &:hover {
+                    @apply bg-indigo-25;
+                }
+                &:active, &.BrightButton__active {
+                    @apply bg-indigo-100;
+                }
+            }
+        }
+    }
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+        &__animation__fade {
+            &-enter-active, &-leave-active {
+                transition: opacity .35s;
+            }
+            &-enter-active {
+                transition-delay: .35s;
+            }
+            &-enter, &-leave-to {
+                opacity: 0;
+            }
+        }
+    }
+}

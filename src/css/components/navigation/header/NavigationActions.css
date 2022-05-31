@@ -1,0 +1,27 @@
+.NavigationActions {
+    @apply flex-shrink mb-12 -mx-8;
+
+    > *:not(:last-child) {
+        @apply mr-4;
+    }
+
+    &--Sidebar > .BrightButton {
+        @apply inline-block text-white;
+        &:disabled {
+            @apply text-indigo-400;
+        }
+
+        &:not(:disabled) {
+            &:hover, &:focus {
+                @apply bg-indigo-500;
+            }
+        }
+    }
+
+    &--Header {
+        @apply mb-0 mt-8 mx-0 block align-top;
+        @screen landscape {
+            @apply mt-0 inline-block;
+        }
+    }
+}

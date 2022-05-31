@@ -1,0 +1,38 @@
+.BrightColumn {
+    &__align-self {
+        &--auto {
+            @apply self-auto;
+        }
+        &--start {
+            @apply self-start;
+        }
+        &--center {
+            @apply self-center;
+        }
+        &--end {
+            @apply self-end;
+        }
+        &--stretch {
+            @apply self-stretch;
+        }
+    }
+
+    &__no-gutters {
+        @apply p-0;
+    }
+
+    &__gutters {
+        &--small {
+            @apply px-8;
+        }
+        &--medium {
+            @apply px-16;
+        }
+        &--large {
+            @apply px-24;
+        }
+        &--none {
+            @apply px-0;
+        }
+    }
+}

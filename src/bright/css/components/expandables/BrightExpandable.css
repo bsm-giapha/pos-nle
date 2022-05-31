@@ -1,0 +1,74 @@
+.BrightExpandable {
+    &Header {
+        @apply flex;
+        outline: 0;
+        * {
+            @apply align-middle;
+        }
+
+        &Expanded {
+            @apply expandable-open-transition-smooth;
+            &__size {
+                &--large {
+                    @apply mb-16;
+                }
+                &--medium {
+                    @apply mb-12;
+                }
+                &--small {
+                    @apply mb-12;
+                }
+            }
+        }
+
+        &__collapsed {
+            @apply mb-0 expandable-close-transition-smooth;
+        }
+    }
+
+    &__arrow {
+        @apply text-blue-400;
+        &--size {
+            &--large {
+                @apply mr-12;
+                i {
+                    font-size: 32px;
+                }
+            }
+            &--medium {
+                @apply mr-16;
+                i {
+                    font-size: 24px;
+                }
+            }
+            &--small {
+                @apply mr-8;
+                i {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &--expanded {
+            i {
+                @apply expandable-arrow-open;
+            }
+        }
+
+        &--collapsed {
+            i {
+                @apply expandable-arrow-close;
+            }
+        }
+    }
+
+    &__content {
+        &--expanded {
+            @apply animation__expandable--open;
+        }
+
+        &--collapsed {
+            @apply animation__expandable--close;
+        }
+    }
+}

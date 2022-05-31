@@ -1,0 +1,72 @@
+.BasePopper {
+    &__wrapper {
+        &--disabled {
+            @apply hidden;
+        }
+    }
+
+    &__card {
+        z-index: 1111;
+
+        &--closable {
+            @apply float-right text-grey-500;
+        }
+    }
+
+    &__arrow {
+        .arrow,
+        .arrow::before {
+            @apply absolute w-20 h-20;
+
+            z-index: -1;
+        }
+
+        .arrow::before {
+            @apply border border-solid border-grey-100 border-t-0 border-r-0 bg-white;
+
+            content: '';
+            border-radius: 0 0 0 2px;
+            box-shadow: -3px 3px 3px -3px rgba(0, 0, 0, 0.25), -10px -4px 0 -10px rgba(0, 0, 0, 0.25);
+        }
+
+        .BasePopper__card[data-popper-placement^='top'] > .BrightCardMain {
+            > div.arrow {
+                bottom: -10px;
+            }
+
+            .arrow::before {
+                transform: rotate(-45deg);
+            }
+        }
+
+        .BasePopper__card[data-popper-placement^='bottom'] > .BrightCardMain {
+            > div.arrow {
+                top: -10px;
+            }
+
+            .arrow::before {
+                transform: rotate(135deg);
+            }
+        }
+
+        .BasePopper__card[data-popper-placement^='left'] > .BrightCardMain {
+            > div.arrow {
+                right: -10px;
+            }
+
+            .arrow::before {
+                transform: rotate(-135deg);
+            }
+        }
+
+        .BasePopper__card[data-popper-placement^='right'] > .BrightCardMain {
+            > div.arrow {
+                left: -10px;
+            }
+
+            .arrow::before {
+                transform: rotate(45deg);
+            }
+        }
+    }
+}

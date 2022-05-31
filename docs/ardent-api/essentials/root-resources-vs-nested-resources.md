@@ -1,0 +1,1 @@
+# Root Resources vs Nested Resources

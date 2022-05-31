@@ -1,0 +1,96 @@
+.BaseLabelContainer {
+    @apply cursor-pointer;
+    &__size {
+        &--large {
+            @apply mb-8;
+
+            &--withSubLabel {
+                @apply mb-8;
+            }
+        }
+        &--medium {
+            @apply mb-6;
+
+            &--withSubLabel {
+                @apply mb-6;
+            }
+        }
+        &--small {
+            @apply mb-4;
+
+            &--withSubLabel {
+                @apply mb-4;
+            }
+        }
+    }
+}
+
+.BaseLabelPrimary {
+    @apply block cursor-pointer text-grey-800;
+    &__disabled {
+        @apply text-grey-200;
+    }
+
+    &__size {
+        &--large {
+            @apply __typography--label--m--bold;
+            line-height: 1.25rem;
+        }
+        &--medium {
+            @apply __typography--label--s--bold;
+            line-height: 1rem;
+        }
+        &--small {
+            @apply __typography--label--xs--bold;
+            line-height: 1rem;
+        }
+    }
+}
+
+.BaseLabelSecondary {
+    @apply block cursor-pointer text-grey-600;
+    &__disabled {
+        @apply text-grey-100;
+    }
+
+    &__size {
+        &--large {
+            @apply __typography--label--s font-secondary mt-4;
+        }
+        &--medium {
+            @apply __typography--label--xs font-secondary mt-2;
+        }
+        &--small {
+            @apply __typography--label--xxs font-secondary;
+        }
+    }
+}
+
+.BaseLabelRequired {
+    @apply text-red-500;
+    &__disabled {
+        @apply text-red-100;
+    }
+}
+
+.BaseLabelOptional {
+    @apply text-grey-400;
+    &__disabled {
+        @apply text-grey-100;
+    }
+
+    &__size {
+        &--large {
+            @apply __typography--body--m;
+            line-height: 1.25rem;
+        }
+        &--medium {
+            @apply __typography--body--s;
+            line-height: 1rem;
+        }
+        &--small {
+            @apply __typography--body--xs;
+            line-height: 1rem;
+        }
+    }
+}

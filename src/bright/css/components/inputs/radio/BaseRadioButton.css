@@ -1,0 +1,279 @@
+.BaseRadioButton {
+
+    &__labelWrapper {
+        @apply inline-block;
+
+        /* Hide the original input */
+        input {
+            @apply absolute w-0 h-0 opacity-0;
+        }
+
+        input + div.BaseLabelContainer {
+            @apply ml-5;
+        }
+
+        /* Create custom radio button */
+        div label {
+            @apply relative;
+        }
+
+        div label::before {
+            @apply relative inline-block border-solid border-2 border-grey-800 mr-12;
+
+            content: "";
+            top: 4px;
+            box-sizing: border-box;
+            border-radius: 50%;
+        }
+
+        &--size {
+            &--large {
+                &--inputValidation--withSubLabel {
+                    .BaseLabelSecondary {
+                        margin-left: 38px;
+                    }
+                }
+            }
+            &--medium {
+                &--inputValidation--withSubLabel {
+                    .BaseLabelSecondary {
+                        margin-left: 34px;
+                    }
+                }
+            }
+            &--small {
+                &--inputValidation--withSubLabel {
+                    .BaseLabelSecondary {
+                        margin-left: 28px;
+                    }
+                }
+            }
+        }
+
+        /* Radio button sizing */
+        &--size {
+            &--large {
+                @apply mb-4;
+
+                /* Radio button size & position */
+                input + div.BaseLabelContainer {
+                    @apply ml-6;
+                }
+
+                div label::before {
+                    @apply w-24 h-24;
+
+                    top: 7px;
+                    margin-right: 0.8125rem;
+                }
+
+                /* Label position */
+                input + div div.BaseLabelSecondary {
+                    margin-left: 41px;
+                }
+                input + div.BaseLabelContainer ~ div.BrightInputValidation {
+                    margin-left: 46px;
+                }
+
+                &--inputValidation {
+                    &--withSubLabel {
+                        input + div.BaseLabelContainer + div.BrightInputValidation {
+                            @apply mt-0;
+                        }
+                    }
+                }
+            }
+
+            &--medium {
+                @apply mb-4;
+
+                /* Radio button size & position */
+                div label::before {
+                    @apply w-20 h-20;
+                    top: 6px;
+                    margin-right: 0.8125rem;
+                }
+
+                input + div div.BaseLabelSecondary {
+                    margin-left: 37px;
+                }
+                input + div.BaseLabelContainer ~ div.BrightInputValidation {
+                    margin-left: 42px;
+                }
+
+                &--inputValidation {
+                    &--withSubLabel {
+                        input + div.BaseLabelContainer + div.BrightInputValidation {
+                            @apply mt-18;
+                        }
+                    }
+                }
+            }
+
+            &--small {
+                @apply mb-0;
+
+                /* Radio button size & position */
+                div label::before {
+                    @apply w-16 h-16;
+
+                    top: 5px;
+                }
+
+                input + div div.BaseLabelSecondary {
+                    margin-left: 31px;
+                }
+                input + div.BaseLabelContainer ~ div.BrightInputValidation {
+                    margin-left: 36px;
+                }
+
+                &--inputValidation {
+                    &--withoutSubLabel {
+                        input + div.BaseLabelContainer + div.BrightInputValidation {
+                            @apply -mt-10;
+                        }
+                    }
+                }
+            }
+        }
+
+        /* General input styling */
+        &:hover div.BaseLabelContainer label {
+            @apply text-grey-700;
+        }
+        div.BaseLabelContainer:active label,
+        div.BaseLabelContainer:focus label {
+            @apply text-grey-900;
+        }
+
+        &:hover input + div label::before {
+            transition: all 0.2s linear;
+        }
+        &:hover input:not(:disabled) + div label::before {
+            @apply border-grey-700 bg-grey-50;
+
+            box-shadow: 0 0 0 9px #F7F7F7;
+        }
+        input:not(:disabled):active + div label::before,
+        input:not(:disabled):focus + div label::before {
+            @apply border-grey-900 bg-grey-100;
+
+            box-shadow: 0 0 0 9px #E5E5E5;
+        }
+
+        input:disabled + div label,
+        &:hover input:disabled + div label,
+        &:active input:disabled + div label,
+        &:focus input:disabled + div label {
+            @apply cursor-not-allowed text-grey-200;
+        }
+        input:disabled + div label::before {
+            @apply border-grey-200;
+        }
+        input:disabled:checked + div label::before {
+            background: radial-gradient(#CBD2D9 0%, #CBD2D9 43%, transparent 50%, transparent);
+        }
+
+        /* Apply the indicator variants */
+        &--variant {
+            &--standard {
+                input:not(:disabled):checked + div label::before {
+                    @apply border-blue-500;
+
+                    background: radial-gradient(#0967D2 0%, #0967D2 43%, transparent 50%, transparent);
+                }
+                &:hover input:not(:disabled):checked + div label::before {
+                    @apply border-blue-400 bg-aqua-50;
+
+                    box-shadow: 0 0 0 9px #F7FDFF;
+                }
+                input:not(:disabled):checked:active + div label::before,
+                input:not(:disabled):checked:focus + div label::before {
+                    @apply border-blue-600 bg-aqua-100;
+
+                    background-image: radial-gradient(#0552B5 0%, #0552B5 43%, transparent 50%, transparent);
+                    box-shadow: 0 0 0 9px #E0F6FF;
+                }
+            }
+            &--alternative {
+                input:not(:disabled):checked + div label::before {
+                    background: radial-gradient(#323F4B 0%, #323F4B 43%, transparent 50%, transparent);
+                }
+                &:hover input:not(:disabled):checked + div label::before {
+                     background-color: #E5E5E5;
+                }
+                input:not(:disabled):checked:active + div label::before,
+                input:not(:disabled):checked:focus + div label::before {
+                    background-color: #E5E5E5;
+                    background-image: radial-gradient(#1F2933 0%, #1F2933 43%, transparent 50%, transparent);
+                }
+            }
+            &--danger {
+                input:not(:disabled):checked + div label::before {
+                    @apply border-red-500 bg-red-50;
+
+                    background: radial-gradient(#E12D39 0%, #E12D39 43%, transparent 50%, transparent);
+                }
+                &:hover input:not(:disabled):checked + div label::before {
+                    box-shadow: 0 0 0 9px #FEF5F5;
+                }
+                input:not(:disabled):checked:active + div label::before,
+                input:not(:disabled):checked:focus + div label::before {
+                    background-color: #FEF5F5;
+                    background-image: radial-gradient(#CF1124 0%, #CF1124 43%, transparent 50%, transparent);
+                    box-shadow: 0 0 0 9px #FEF5F5;
+                }
+                input:not(:disabled):not(:checked) + div label::before {
+                    @apply border-red-500 bg-red-50;
+                }
+                &:hover input:not(:disabled):not(:checked) + div label::before {
+                    @apply border-red-500 bg-red-50 text-grey-700;
+
+                    box-shadow: 0 0 0 9px #FEF5F5;
+                }
+                input:not(:disabled):not(:checked):active + div label::before,
+                input:not(:disabled):not(:checked):focus + div label::before {
+                    @apply border-red-600 bg-red-100;
+
+                    box-shadow: 0 0 0 9px #FCD8D8;
+                }
+            }
+        }
+
+        @keyframes radioIndicatorFadeIn{
+            0% { opacity:0; }
+            100% { opacity:1; }
+        }
+
+        @-moz-keyframes radioIndicatorFadeIn {
+            0% { opacity:0; }
+            100% { opacity:1; }
+        }
+
+        @-webkit-keyframes radioIndicatorFadeIn {
+            0% { opacity:0; }
+            100% { opacity:1; }
+        }
+
+        @-o-keyframes radioIndicatorFadeIn {
+            0% { opacity:0; }
+            100% { opacity:1; }
+        }
+
+        @-ms-keyframes radioIndicatorFadeIn {
+            0% { opacity:0; }
+            100% { opacity:1; }
+        }
+    }
+
+    &__labelMargin {
+
+        &--inputValidation {
+            &--withSubLabel {
+                input + div.BaseLabelContainer + div.BrightInputValidation {
+                    @apply mt-0;
+                }
+            }
+        }
+    }
+}

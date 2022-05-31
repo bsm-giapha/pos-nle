@@ -1,0 +1,62 @@
+@layer components {
+    .AppPagePadding {
+        @apply py-24 px-20;
+        @screen tablet {
+            @apply py-32 px-32;
+        }
+        @screen desktop {
+            @apply py-40 px-40;
+        }
+
+        &__X {
+            @apply px-16;
+            @screen tablet {
+                @apply px-32;
+            }
+            @screen desktop {
+                @apply px-40;
+            }
+        }
+
+        &__Y {
+            @apply py-24;
+            @screen tablet {
+                @apply py-32;
+            }
+            @screen desktop {
+                @apply py-40;
+            }
+        }
+    }
+}
+
+/* Need this to beat the specificity of the BrightCard size classes */
+.BrightCard.AppPagePadding {
+    @apply py-24 px-20;
+    @screen tablet {
+        @apply py-32 px-32;
+    }
+    @screen desktop {
+        @apply py-40 px-40;
+    }
+
+    &__X {
+        @apply px-16;
+        @screen tablet {
+            @apply px-32;
+        }
+        @screen desktop {
+            @apply px-40;
+        }
+    }
+
+    &__Y {
+        @apply py-24;
+        @screen tablet {
+            @apply py-32;
+        }
+        @screen desktop {
+            @apply py-40;
+        }
+    }
+}

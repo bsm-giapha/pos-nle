@@ -1,0 +1,11 @@
+/* Fonts go here */
+@import(url('https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0'));
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import "tailwindcss/base"; /* Tailwind base styles (including a variant of normalize). */
+@import "./base/_import.css"; /* Our base styles. These can be overridden by components and utilities. */
+
+@import "tailwindcss/components"; /* Tailwind. This injects any component classes registered by plugins. */
+@import "./components/_import.css"; /* Our components. These override the base styles and are overridden by utilities. */
+
+@import "tailwindcss/utilities"; /* Tailwind utilities. These are driven by our tailwind.js file in the root directory. */
+@import "./utilities/_import.css"; /* Our utilities. These override everything if they have enough specificity. */

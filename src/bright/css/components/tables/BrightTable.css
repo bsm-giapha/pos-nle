@@ -1,0 +1,148 @@
+.BrightTable {
+    @apply overflow-y-visible;
+    display: table !important;
+    border-collapse: collapse !important;
+
+    tr, th, td {
+        @apply border-0;
+    }
+    thead {
+        tr {
+            @apply border-b border-grey-100 border-solid align-bottom;
+        }
+    }
+    th[class*='__column--sort'] {
+        @apply cursor-pointer;
+        &:hover {
+            @apply transition-smooth text-blue-500;
+        }
+    }
+
+    &__column,
+    &__row {
+        &--align {
+            &--left {
+                @apply text-left;
+            }
+            &--center {
+                @apply text-center;
+            }
+            &--right {
+                @apply text-right;
+            }
+        }
+    }
+
+    &__bordered {
+        @apply border border-grey-100;
+        thead {
+            th, tr {
+                @apply border-t border-grey-100 border-solid;
+            }
+        }
+        tr {
+            @apply border-l border-r border-grey-100 border-solid;
+        }
+        tbody {
+            tr:first-child {
+                @apply border-t border-grey-100 border-solid;
+            }
+            tr:last-child {
+                @apply border-b border-grey-100 border-solid;
+            }
+        }
+    }
+
+    &__fullWidth {
+        min-width: 100% !important;
+    }
+
+    &__padding {
+        &--small {
+            th, td {
+                @apply px-8 py-4;
+            }
+        }
+        &--medium {
+            th, td {
+                @apply px-12 py-8;
+            }
+        }
+        &--large {
+            th, td {
+                @apply px-16 py-12;
+            }
+        }
+        &--none {
+            th, td {
+                @apply px-0 py-0;
+            }
+        }
+    }
+
+    &__showHorizontalDivider {
+        tbody tr {
+            @apply border-t border-b border-grey-100 border-solid;
+        }
+    }
+
+    &__showVerticalDivider {
+        tr th, tr td {
+            @apply border-l border-r border-grey-100 border-solid;
+        }
+        tr th:first-child, tr td:first-child {
+            @apply border-l-0 border-r border-grey-100 border-solid;
+        }
+        tr th:last-child, tr td:last-child {
+            @apply border-l border-r-0 border-grey-100 border-solid;
+        }
+    }
+
+    &__size {
+        &--small {
+            thead, tbody {
+                @apply __typography--body--s;
+            }
+            th {
+                @apply __typography--section--s--bold;
+            }
+        }
+        &--medium {
+            thead, tbody {
+                @apply __typography--body--m;
+            }
+            th {
+                @apply __typography--section--s--bold;
+            }
+        }
+        &--large {
+            thead, tbody {
+                @apply __typography--body--l;
+            }
+            th {
+                @apply __typography--section--m--bold;
+            }
+        }
+    }
+
+    &__striped {
+        tbody {
+            tr:nth-child(even) {
+                @apply bg-grey-50;
+            }
+        }
+    }
+
+    tbody tr.BrightTable__bulkEditable {
+        @apply bg-blue-100;
+    }
+
+    tbody tr:hover {
+        @apply transition-smooth bg-blue-50;
+    }
+}
+
+div.BrightDropdownSelect button,
+div.BrightDropdownSelect div.BaseSelectOption  {
+    @apply truncate;
+}

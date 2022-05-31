@@ -1,0 +1,5 @@
+.BaseSelectOptionGroup {
+    @apply pt-12 pb-4 px-16 block font-primary font-medium uppercase text-blue-600 text-xs transition-smooth select-none;
+    letter-spacing: 0.02em;
+    line-height: 1rem;
+}

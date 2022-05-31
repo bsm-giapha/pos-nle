@@ -1,0 +1,16 @@
+/* Fonts go here */
+@import "../../node_modules/animate.css/animate.min.css";
+
+@import "../../node_modules/tailwindcss/base.css"; /* Tailwind base styles (including a variant of normalize). Can be disabled. */
+@import "../bright/css/base/_import.css"; /* Bright's base styles. These can be overridden by components and utilities. */
+@import "base/_import.css"; /* Our base styles */
+
+@import "../../node_modules/tailwindcss/components.css"; /* Tailwind. This injects any component classes registered by plugins. */
+@import "../bright/css/components/_import.css"; /* Bright's components. These override the base styles and are overridden by utilities. */
+@import "components/_import.css"; /* Our components */
+@import "layouts/_import.css"; /* Our layouts */
+@import "pages/_import.css"; /* Our pages */
+
+@import "../../node_modules/tailwindcss/utilities.css"; /* Tailwind utilities. These are driven by our tailwind.js file in the root directory. */
+@import "../bright/css/utilities/_import.css"; /* Bright's utilities. These override everything if they have enough specificity. */
+@import "utilities/_import.css"; /* Our utilities */

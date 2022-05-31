@@ -1,0 +1,32 @@
+.NavigationSidebar {
+    @apply fixed;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+
+    &--expanded {
+        width: 244px;
+    }
+
+    &__Menu {
+        @apply absolute bg-indigo-700 z-20;
+        transition: left 0.3s ease-in-out;
+        left: -244px;
+        width: 244px;
+        min-height: 100vh;
+
+        .ClientName {
+            @apply __typography--section--m--bold text-white mb-8 select-none truncate;
+        }
+
+        .Divider {
+            @apply w-full bg-white -mx-24;
+            height: 1px;
+            width: 244px;
+            opacity: 0.15;
+        }
+
+        &--expanded {
+            left: 0;
+        }
+    }
+}

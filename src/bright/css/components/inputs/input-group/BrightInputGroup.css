@@ -1,0 +1,19 @@
+.BrightInputGroup {
+     &__size {
+         &--small {
+             @apply pb-4 __typography--label--xs--bold;
+         }
+         &--medium {
+             @apply pb-8 __typography--label--s--bold;
+         }
+         &--large {
+             @apply pb-8 __typography--label--m--bold;
+         }
+    }
+}
+
+.BrightInputGroupFieldset > .BaseRadioButton:last-child .BaseLabelContainer,
+.BrightInputGroupFieldset .BrightCheckbox:last-child,
+.BrightInputGroupFieldset .BrightSwitch:last-child {
+    @apply mb-0;
+}

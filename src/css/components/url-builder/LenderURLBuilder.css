@@ -1,0 +1,47 @@
+.LenderURLBuilder {
+    &__IconBubble {
+         @apply flex-shrink-0 align-top mr-16 inline-block;
+
+
+     }
+    &__Section {
+        @apply mb-24;
+        &__Header {
+            &--label {
+                 @apply __typography--section-caps--xs--bold mb-4 text-indigo-400 inline-block;
+                 font-size: 16px;
+             }
+
+            &--signup {
+                 @apply text-green-400 mr-8;
+             }
+            &--marketplace {
+                 @apply text-purple-600 mr-8;
+             }
+            &--login {
+                 @apply text-yellow-600 mr-8;
+             }
+
+            &__Icon {
+                 font-size: 24px;
+             }
+          }
+
+        &__Body {
+            margin-left: 2.25rem;
+            margin-bottom: 2rem;
+         }
+
+         &--sublabel {
+              @apply __typography--label--xs font-secondary mb-4 text-grey-600;
+         }
+
+          &__Action {
+                @apply mt-8;
+
+                &--url {
+                    @apply text-blue-500 block break-all __typography--body--s--bold mt-8 mb-0;
+                 }
+           }
+     }
+}

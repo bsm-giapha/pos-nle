@@ -1,0 +1,18 @@
+.BasePagination {
+    .BaseFormControl > .BaseLabelContainer {
+        display: none;
+    }
+    /* A fix for the dropdown rendering on two lines when an option is selected */
+    .BrightDropdownSelect {
+        .BaseSelectOption__LabelContainer, .BaseSelectOptionGroup {
+            white-space: nowrap;
+        }
+    }
+
+    &TotalResultsLabel {
+        @apply __typography--body--s text-grey-500 inline-block mb-0;
+        > span {
+            @apply __typography--body--s--bold;
+        }
+    }
+}

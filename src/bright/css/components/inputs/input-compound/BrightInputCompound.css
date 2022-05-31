@@ -1,0 +1,54 @@
+.BrightInputCompound {
+    legend > .BaseLabelContainer {
+        @apply mb-0;
+    }
+
+    .compoundedInputs {
+        /* A fix for the dropdown rendering on two lines when an option is selected */
+        .BrightDropdownSelect {
+            .BaseSelectOption__LabelContainer, .BaseSelectOptionGroup {
+                white-space: nowrap;
+            }
+        }
+
+        > *:first-child {
+            > input.InputStandardStyle, .BrightDropdownSelect__SelectButton {
+                @apply rounded-r-none;
+            }
+        }
+        > *:not(:first-child):not(:last-child) {
+            > input.InputStandardStyle, .BrightDropdownSelect__SelectButton {
+                @apply rounded-l-none rounded-r-none;
+            }
+        }
+        > *:last-child {
+            > input.InputStandardStyle, .BrightDropdownSelect__SelectButton {
+                @apply rounded-l-none;
+            }
+        }
+    }
+
+    &__hideInputLabels {
+        .compoundedInputs {
+            .BaseLabelContainer,
+            .BrightInputValidation {
+                display: none;
+            }
+        }
+    }
+
+    &__rounded {
+        .compoundedInputs {
+            > *:first-child {
+                > input.InputStandardStyle, .BrightDropdownSelect__SelectButton {
+                    @apply rounded-l-full;
+                }
+            }
+            > *:last-child {
+                > input.InputStandardStyle, .BrightDropdownSelect__SelectButton {
+                    @apply rounded-r-full;
+                }
+            }
+        }
+    }
+}

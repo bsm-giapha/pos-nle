@@ -1,0 +1,271 @@
+.BrightCard {
+    @apply block bg-white;
+
+    &__href {
+        @apply cursor-pointer text-grey-800;
+        &:hover {
+            text-decoration: none !important;
+            div.BrightCardLabel {
+                @apply text-blue-500;
+            }
+            div.BrightCardSubLabel {
+                @apply text-grey-400;
+            }
+        }
+    }
+
+    &__size {
+        &--large {
+            @apply px-24 py-20;
+
+            &[class*="ribbon"]:not([class*="ribbon--none"]) {
+                padding-left: 1.375rem;
+            }
+
+            .BrightCardHeaderLeft {
+                @apply mr-20;
+                &__margin {
+                    @apply mb-8;
+                }
+            }
+            .BrightCardHeaderCenter__margin {
+                @apply mr-20;
+            }
+            .BrightCardHeader__bottom-margin {
+                @apply mb-16;
+            }
+
+            .BrightCardLabel {
+                @apply __typography--section--xl--bold text-grey-800 mb-0;
+                &__invert {
+                    @apply mt-4;
+                }
+            }
+            .BrightCardLabelElement {
+                margin-bottom: 0 !important;
+                &__invert {
+                    @apply mt-4;
+                }
+            }
+            .BrightCardSubLabel {
+                @apply __typography--section--s text-grey-500 mt-4 mb-0;
+                &__invert {
+                    @apply mt-0;
+                }
+            }
+            .BrightCardFooterRight {
+                @apply mt-16;
+            }
+        }
+
+        &--medium {
+            @apply px-20 py-16;
+
+            &[class*="ribbon"]:not([class*="ribbon--none"]) {
+                @apply pl-14;
+            }
+
+            .BrightCardHeaderLeft {
+                @apply mr-16;
+                &__margin {
+                    @apply mb-8;
+                }
+            }
+            .BrightCardHeaderCenter__margin {
+                @apply mr-16;
+            }
+            .BrightCardHeader__bottom-margin {
+                @apply mb-12;
+            }
+
+            .BrightCardLabel {
+                @apply __typography--section--l--bold text-grey-800 mb-0;
+                &__invert {
+                    @apply mt-4;
+                }
+            }
+            .BrightCardLabelElement {
+                margin-bottom: 0 !important;
+                &__invert {
+                    @apply mt-4;
+                }
+            }
+            .BrightCardSubLabel {
+                @apply __typography--section--xs text-grey-500 mt-4 mb-0;
+                &__invert {
+                    @apply mt-0;
+                }
+            }
+            .BrightCardFooterRight {
+                @apply mt-12;
+            }
+        }
+
+        &--small {
+            @apply px-16 py-12;
+
+            &[class*="ribbon"]:not([class*="ribbon--none"]) {
+                @apply pl-6;
+            }
+
+            .BrightCardHeaderLeft {
+                @apply mr-12;
+                &__margin {
+                    @apply mb-8;
+                }
+            }
+            .BrightCardHeaderCenter__margin {
+                @apply mr-12;
+            }
+            .BrightCardHeader__bottom-margin {
+                @apply mb-12;
+            }
+
+            .BrightCardLabel {
+                @apply __typography--section--m--bold text-grey-800 mb-0;
+                &__invert {
+                    @apply mt-4;
+                }
+            }
+            .BrightCardLabelElement {
+                margin-bottom: 0 !important;
+                &__invert {
+                    @apply mt-4;
+                }
+            }
+            .BrightCardSubLabel {
+                @apply __typography--section--xs text-grey-500 mt-4 mb-0;
+                &__invert {
+                    @apply mt-0;
+                }
+            }
+            .BrightCardFooterRight {
+                @apply mt-12;
+            }
+        }
+    }
+
+    &__bordered { /* NOTE: This needs to come before the ribbon selector or else a visual bug happens */
+        @apply border;
+    }
+
+    &__ribbon {
+        &--grey {
+            @apply border-l-6;
+            border-left-color: #999999;
+        }
+
+        &--blue {
+            @apply border-l-6;
+            border-left-color: #3690DB;
+        }
+
+        &--pink {
+            @apply border-l-6;
+            border-left-color: #FF5EA1;
+        }
+
+        &--aqua {
+            @apply border-l-6;
+            border-left-color: #64D4FF;
+        }
+
+        &--yellow {
+            @apply border-l-6;
+            border-left-color: #FFD95E;
+        }
+
+        &--green {
+            @apply border-l-6;
+            border-left-color: #36A349;
+        }
+
+        &--red {
+            @apply border-l-6;
+            border-left-color: #EF3D3D;
+        }
+
+        &--orange {
+            @apply border-l-6;
+            border-left-color: #FF9C4B;
+        }
+
+        &--purple {
+            @apply border-l-6;
+            border-left-color: #9D68D7;
+        }
+
+        &--indigo {
+            @apply border-l-6;
+            border-left-color: #506BD7;
+        }
+    }
+
+    &__rounded {
+        @apply rounded-6;
+    }
+
+    &__raised {
+        @apply shadow-card;
+    }
+ }
+
+.BrightCardMedia {
+    @apply overflow-hidden;
+    &__rounded {
+        @apply rounded-t-6;
+    }
+    &__bordered {
+        @apply border-b;
+    }
+}
+
+.BrightCardMain {
+    &__rounded {
+        @apply rounded-b-6;
+    }
+}
+
+.BrightCardHeader {
+    @apply flex flex-wrap;
+
+    &Center {
+        @apply flex-1;
+    }
+    &Right {
+        @apply flex-none;
+    }
+
+    &--expandable {
+        @apply cursor-pointer;
+        &:hover {
+            text-decoration: none !important;
+            div.BrightCardLabel {
+                @apply text-blue-500;
+            }
+            div.BrightCardSubLabel {
+                @apply text-grey-400;
+            }
+        }
+    }
+}
+
+.BrightCardLabelContainer {
+    @apply flex flex-col;
+
+    &__position {
+        &--left {
+            @apply text-left;
+        }
+        &--center {
+            @apply text-center;
+        }
+        &--right {
+            @apply text-right;
+        }
+    }
+}
+
+.BrightCardFooterRight {
+    @apply inline-block;
+}
